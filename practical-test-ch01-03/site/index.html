@@ -1,0 +1,78 @@
+<!-- Câu 1a: viết trang danh sách sự kiện tại đây -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 . 0">
+    <title>EduHub Web - Sự kiện sắp diễn ra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Đầu trang: Logo và menu 3 liên kết-->
+<header>
+    <div class="logo">
+        <a href="index.html">EduHub Web</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#events">Sự kiện</a></li>
+            <li><a href="#register">Đăng ký</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Nội dung chính -->
+<main id="events">
+    <hi>Sự kiện sắp diễn ra</hi>
+
+    <!-- Form tìm kiếm-->
+    <form id="search-form">
+        <label for="keyword">Tìm sự kiện</label>
+        <input type="search" id="keyword" name="keyword" placeholder="Tìm sự kiện...">
+        <button type="submit">Tìm</button>
+    </form>
+
+    <!-- Trạng thái tìm kiếm / tải dữ liệu -->
+    <p id="status"></p>
+
+    <!-- Danh sách card sự kiện -->
+    <div id="event-list">
+
+        <!-- Card 1 -->
+        <article class="event-card">
+            <img src="img/event.svg" alt="Workshop Git & GitHub cho tân sinh viên">
+            <h2>
+                <a href="event-detail.html?id=1">Workshop Git &amp; GitHub cho tân sinh viên</a>
+            </h2>
+            <p class="event-time">
+                <time datetime="2026-09-12T08:00">08:00, 12/09/2026</time>
+            </p>
+            <p class="event-location">Phòng máy A3.201</p>
+            <p class="event-slots">Còn 12/40 chỗ</p>
+        </article>
+
+        <!-- Card 2 -->
+         <article class="event-card">
+            <img src="img/event.svg" alt="Hackathon EduHub 24 giờ">
+            <h2>
+                <a href="event-detail.html?id=2">Hackathon EduHub 24 giờ</a>
+            </h2>
+            <p class="event-time">
+                <time datetime="2026-12-19T08:00">08:00. 19/12/2026</time>
+            </p>
+         </article>
+
+    </div>
+</main>
+
+<!-- Chân trang -->
+ <footer>
+    <p>&copy; 2026 EduHub Web</p>
+ </footer>
+
+<!-- Nạp JavaScript cuối body -->
+<script src="js/app.js"></script>
+</body>
+</html>

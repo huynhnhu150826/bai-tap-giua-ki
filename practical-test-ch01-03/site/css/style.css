@@ -1,0 +1,152 @@
+/* Câu 1b: viết CSS tại đây */
+/* 1. Khai báo biến trong :root và reset box-sizing */
+:root {
+    --primary-color: #006CB4;
+    --danger-color: #E40C24;
+    --spacing: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9fafb;
+}
+
+/* 2. Đầu trang dùng Flexbox: logo trái, menu phải */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing) calc(var(--spacing) * 2);
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+header .logo a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing);
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Phần nội dung chính và form tìm kiếm */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: calc(var(--spacing) * 1.5) var(--spacing);
+}
+
+main h1 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing);
+}
+
+#search-form button {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#status {
+    margin-bottom: var(--spacing);
+    font-style: italic;
+    color: #555555;
+}
+
+/* 3. Danh sách card dùng Grid theo kiểu mobile-first: 1 cột */
+#event-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+}
+
+/* Từ 768px: 2 cột */
+@media (min-width: 768px) {
+    #event-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Từ 1200px: 3 cột */
+@media (min-width: 1200px) {
+    #event-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* 4. Card có viền, bo góc, khoảng đệm, ảnh không tràn card */
+.event-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.event-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.event-card h2 {
+    font-size: 1.15rem;
+}
+
+.event-card h2 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.event-card h2 a:hover {
+    text-decoration: underline;
+}
+
+/* 5. Nhãn "Hết chỗ" chữ trắng nền màu cảnh báo */
+.bage-full {
+    display: inline-block;
+    background-color: var(--danger-color);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+/* Chân trang */
+footer {
+    text-align: center;
+    padding: var(--spacing);
+    margin-top: calc(var(--spacing) * 2);
+    border-top: 1px solid #dddddd;
+    color: #666666;
+}
